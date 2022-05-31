@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Previsions from './pages/Previsions';
 import WrongPage from './pages/WrongPage';
+import Home from './pages/Home';
+
 import './assets/styles/global.scss'
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/previsoes" element={<Previsions />} />
           <Route path="/wrongpage" element={<WrongPage />} />
         </Routes>
       </Router>
