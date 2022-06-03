@@ -4,12 +4,16 @@ import { TitleContext } from '../../contexts/context';
 import Header from '../../components/Header/header';
 import Datas from '../../components/Home/datas';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './home.scss';
 
 export default function Home() {
 
     const [title, setTitle] = useState("Inflação da Gasolina no Brasil")
+
+    useEffect(() => {
+        document.title = "A3 | Previsão do Combustível no Brasil"
+    }, [])
 
     return (
         <TitleContext.Provider value={{ title, setTitle }}>
