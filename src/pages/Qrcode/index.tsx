@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/Header/header';
-import { TitleContext } from '../../contexts/context';
+import { TitleContext, usePath } from '../../contexts/context';
 
 import QrCode from '../../assets/images/qrcode.png'; // Importa o QR Code
 import './qrcode.scss';
+import { RiArrowGoBackLine } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Qrcode() {
+    const navigate = useNavigate()
+
     const [title, setTitle] = useState("QrCode da Dashboard")
+    const { path, setPath } = usePath()
 
     useEffect(() => {
         document.title = "A3 | QRCode"
@@ -21,6 +26,12 @@ export default function Qrcode() {
                 </header>
                 <main>
                     <img src={QrCode} alt="qr_code" />
+                    <RiArrowGoBackLine
+                        size="24px"
+                        color="#00000066"
+                        id='icon-back'
+                        onClick={() => navigate(path)}
+                    />
                 </main>
             </div>
         </TitleContext.Provider>

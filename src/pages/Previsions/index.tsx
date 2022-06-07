@@ -1,17 +1,19 @@
 
+import { BackPathnameContext, ButtonValueContext, LinkContext, TitleContext, ValueButton, ValueLink, valuePath } from '../../contexts/context';
 import SalesPrevision from '../../components/Previsions/salesprevision';
 import LinePrevision from '../../components/Previsions/lineprevision';
-import { TitleContext } from '../../contexts/context';
+import ButtonIcons from '../../components/ButtonIcons/buttonicons';
 import Header from '../../components/Header/header';
 import { useEffect, useState } from 'react';
 import './previsions.scss';
-import { Link } from 'react-router-dom';
 
-import { IoQrCodeOutline } from "react-icons/io5";
 
 export default function Previsions() {
 
     const [title, setTitle] = useState("Previsões da Gasolina no Brasil")
+    const [value, setValue] = useState(ValueButton.Previsions)
+    const [link, setLink] = useState(ValueLink.Home)
+    const [path, setPath] = useState(valuePath.Previsions)
 
     useEffect(() => {
         document.title = "A3 | Previsão"
@@ -33,14 +35,14 @@ export default function Previsions() {
                                 <SalesPrevision />
                             </div>
                         </section>
-                        <section className="buttonPrevisions">
-                            {/* Transformar essa section em um componente, com botões de voltar e icones para apresentação e 
-                            paginação para a página do qrcode. Fazer um contextAPI para armazenar a variavel da url que chamou
-                            a página qrcode. */}
-                            <div className="icons">
-                                <IoQrCodeOutline color="#00000022" size="24px" />
-                            </div>
-                            <Link to="/"><button>Voltar para a home</button></Link>
+                        <section className="button-previsions">
+                            <ButtonValueContext.Provider value={{ value, setValue }}>
+                                <LinkContext.Provider value={{ link, setLink }}>
+                                    <BackPathnameContext.Provider value={{ path, setPath }}>
+                                        <ButtonIcons />
+                                    </BackPathnameContext.Provider>
+                                </LinkContext.Provider>
+                            </ButtonValueContext.Provider>
                         </section>
                     </main>
                 </div>

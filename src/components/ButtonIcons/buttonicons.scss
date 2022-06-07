@@ -1,0 +1,25 @@
+
+.buttonPrevisions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .icons {
+        display: flex;
+        align-items: center;
+
+        #icon-one,
+        #icon-two {
+            cursor: pointer;
+        }
+
+        #icon-one {
+            margin-right: 0.25rem;
+        }
+
+        #icon {
+            margin-right: 0.25rem;
+        }
+    }
+}

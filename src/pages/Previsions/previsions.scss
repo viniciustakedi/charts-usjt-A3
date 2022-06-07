@@ -6,15 +6,15 @@ main {
     width: 100%;
 }
 
-.content-previsions{
-    main{
-        .buttonPrevisions{
+.content-previsions {
+    main {
+        .buttonPrevisions {
             width: 90%;
             padding-top: 2rem;
             padding-bottom: 2rem;
             text-align: right;
 
-            button{
+            button {
                 border: none;
                 border-radius: 5px;
                 background-image: linear-gradient(to right, #00a7fd, #02efff);
@@ -28,12 +28,12 @@ main {
                 cursor: pointer;
             }
 
-            button:hover{
+            button:hover {
                 font-weight: 800;
                 transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
 
-            button:focus{
+            button:focus {
                 outline: none;
             }
         }
@@ -45,17 +45,25 @@ main {
     justify-content: center;
     align-items: center;
     width: 90%;
+
     .chartPrevision,
     .salesPrevision {
         width: 50%;
         height: 100%;
     }
 
-    .chartPrevision{
+    .chartPrevision {
         margin-right: 0.5rem;
     }
 
-    .salesPrevision{
+    .salesPrevision {
         margin-left: .5rem;
     }
+}
+
+.button-previsions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
