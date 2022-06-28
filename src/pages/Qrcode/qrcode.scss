@@ -8,8 +8,14 @@
         height: 100%;
         padding-top: 10rem;
 
-        img{
+        h1{
+            font-size: 2rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
 
+        img{
             width: 30rem;
             height: 30rem;
             object-fit: contain;

@@ -25,6 +25,7 @@ export default function Qrcode() {
                     <Header />
                 </header>
                 <main>
+                    <h1>Compartilhe o nosso projeto!</h1>
                     <img src={QrCode} alt="qr_code" />
                     <RiArrowGoBackLine
                         size="24px"
